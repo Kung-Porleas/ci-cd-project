@@ -1,0 +1,18 @@
+/* default bullets */
+::ng-deep .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px; /* circle */
+  background: red;   /* gray */
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+/* active bullet → rectangle */
+::ng-deep .swiper-pagination-bullet-active {
+  width: 24px;
+  height: 8px;
+  border-radius: 4px;   /* rectangle */
+  background: #ffffff;
+  opacity: 1;
+}

@@ -1,3 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+/* default bullets */
+swiper-container::part(bullet) {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #9ca3af;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+/* active bullet */
+swiper-container::part(bullet-active) {
+  width: 24px;
+  height: 8px;
+  border-radius: 4px;
+  background: #ffffff;
+  opacity: 1;
+}

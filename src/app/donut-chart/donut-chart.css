@@ -1,0 +1,16 @@
+/* Add this CSS to your component */
+::ng-deep .apexcharts-canvas {
+  touch-action: auto !important;
+  pointer-events: auto !important;
+}
+
+::ng-deep .apexcharts-tooltip {
+  z-index: 99999 !important;
+}
+
+.chart-container {
+  position: relative;
+  overflow: visible; /* NOT hidden */
+  width: 100%;
+  height: auto;
+}
