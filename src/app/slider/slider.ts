@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 export interface SlideItem {
   image: string;
@@ -15,7 +15,6 @@ export interface SlideItem {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Slider {
-    // @Input() slides: SlideItem[] = [];
       slides: SlideItem[] = [
     {
       image: 'https://picsum.photos/id/1015/800/400',

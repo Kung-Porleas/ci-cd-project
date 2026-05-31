@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Chart } from "./chart/chart";
 import { Slider } from "./slider/slider";
 import { Input } from "./input/input";
