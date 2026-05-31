@@ -1,0 +1,53 @@
+<div class="space-y-4">
+
+  <div class="flex justify-end">
+    <button
+      class="rounded bg-blue-600 px-4 py-2 text-white"
+      (click)="copyAll()"
+    >
+      {{ copiedAll() ? 'Copied All!' : 'Copy All' }}
+    </button>
+  </div>
+
+  <table class="w-full border-collapse border">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border p-3 text-left">Account No</th>
+        <th class="border p-3 text-left">Name</th>
+        <th class="border p-3 text-left">Currency</th>
+        <th class="border p-3 text-center">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (account of accounts; track account.id) {
+        <tr>
+          <td class="border p-3">
+            {{ account.accountNo }}
+          </td>
+
+          <td class="border p-3">
+            {{ account.name }}
+          </td>
+
+          <td class="border p-3">
+            {{ account.currency }}
+          </td>
+
+          <td class="border p-3 text-center">
+            <button
+              class="rounded bg-gray-200 px-3 py-1"
+              (click)="copyRow(account)"
+            >
+              {{
+                copiedRowId() === account.id
+                  ? 'Copied!'
+                  : 'Copy'
+              }}
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

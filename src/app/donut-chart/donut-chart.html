@@ -11,3 +11,16 @@
   ></apx-chart>
 </div>
 
+<button (click)="copyAll()">
+  Copy All
+</button>
+
+@for (account of accounts; track account.id) {
+  <div class="rounded-xl border p-4 mb-3">
+    <p>{{ account.accountNo }}</p>
+
+    <button (click)="copy(account.accountNo)">
+      Copy
+    </button>
+  </div>
+}

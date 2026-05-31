@@ -11,8 +11,37 @@ export class DonutChart implements OnInit, AfterViewInit {
   @ViewChild('chart') chartComponent!: ChartComponent;
   public chartOptions = signal<ApexOptions>({});
 
+
   ngOnInit(): void {
     this.initChart();
+  }
+
+  accounts = [
+    { id: 1, accountNo: '010371018' },
+    { id: 2, accountNo: '677669' },
+    { id: 3, accountNo: '123456789' },
+  ];
+
+  async copyAll() {
+    try {
+      const text = this.accounts
+        .map(account => account.accountNo)
+        .join('\n');
+
+      await navigator.clipboard.writeText(text);
+
+      console.log('Copied all!');
+    } catch (err) {
+      console.error('Copy failed', err);
+    }
+  }
+  async copy(text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Copied:', text);
+    } catch (err) {
+      console.error('Copy failed', err);
+    }
   }
 
   initChart(): void {
